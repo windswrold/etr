@@ -55,11 +55,15 @@ class RequestMethod {
     complationBlock? complationBlock, {
     Map<String, dynamic>? queryParameters,
     dynamic data,
+    Map<String, dynamic>? header,
   }) async {
     String m = RequestMethod._getRequestMethod(method);
     CancelToken cancelToken = RequestMethod._getCancelToken(url);
     Options option = Options();
     option.method = m;
+    if (header != null) {
+      option.headers = header;
+    }
     dynamic result;
 
     try {

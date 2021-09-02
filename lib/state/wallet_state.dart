@@ -128,7 +128,7 @@ class CurrentChooseWalletState with ChangeNotifier {
 
   void _configTimerRequest() async {
     if (_timer == null) {
-      _timer = TimerUtil(mInterval: 20000);
+      _timer = TimerUtil(mInterval: 10000);
       _timer!.setOnTimerTickCallback((millisUntilFinished) async {
         if (_currentWallet.length == 0) return;
         requestAssets(false);

@@ -33,8 +33,8 @@ class _PaymentAmountState extends State<PaymentAmount> {
   double? _feeValue = 0.0;
   TRWallet? _wallet;
   int _feeOffset = 20;
-  double sliderMin = 1;
-  double sliderMax = 150;
+  double sliderMin = 20;
+  double sliderMax = 300;
   String _bean = "23788";
   ETHClient? _web3Client;
   int _suggestGas = 0;
@@ -94,6 +94,8 @@ class _PaymentAmountState extends State<PaymentAmount> {
     });
     EtherAmount gasPricce = await _web3Client!.getGasPrice();
     int gasFee = gasPricce.getValueInUnit(EtherUnit.gwei).toInt();
+    int minv = max(sliderMin.toInt(), gasFee);
+    gasFee = min(sliderMax.toInt(), minv);
     if (mounted) {
       setState(() {
         _suggestGas = gasFee;
@@ -518,7 +520,7 @@ class _PaymentAmountState extends State<PaymentAmount> {
                           ),
                           GestureDetector(
                             behavior: HitTestBehavior.opaque,
-                            onTap: (){
+                            onTap: () {
                               showTransDetailAlertView(context: context);
                             },
                             child: Container(
