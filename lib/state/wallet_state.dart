@@ -13,7 +13,6 @@ class CurrentChooseWalletState with ChangeNotifier {
   List<TRWallet> _currentWallet = [];
   List<MCollectionTokens> _collectionTokens = []; //我的代币
   MCurrencyType _currencyType = MCurrencyType.CNY;
-  bool _isTestNet = true;
   int _tokenIndex = 0;
   String _totalAssets = "0.00"; //总资产数额
   String _ethPrice = "0.0";
@@ -68,7 +67,7 @@ class CurrentChooseWalletState with ChangeNotifier {
     List<MCollectionTokens> tokens = [];
     for (var wallet in _currentWallet) {
       String owner = wallet.walletAaddress!;
-      if (_isTestNet == true) {
+      if (isTestNode == true) {
         if (wallet.coinType == KCoinType.ETH.index) {
           tokens.addAll(await MCollectionTokens.findStateTokens(
               owner, 1, ETHChainID.Rinkeby.getChainId()));

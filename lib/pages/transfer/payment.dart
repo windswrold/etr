@@ -1,5 +1,6 @@
 import 'dart:math';
 
+import 'package:etrflying/component/custom_dialog.dart';
 import 'package:etrflying/component/custom_textfield.dart';
 import 'package:etrflying/model/client/ethclient.dart';
 import 'package:etrflying/model/collection_tokens.dart';
@@ -500,17 +501,37 @@ class _PaymentAmountState extends State<PaymentAmount> {
                   decoration: CustomTextField.getBorderLineDecoration(
                     suffixIcon: GestureDetector(
                       behavior: HitTestBehavior.opaque,
-                      child: Container(
-                        alignment: Alignment.center,
-                        height: 20,
-                        child: Text(
-                          "全部转出",
-                          style: TextStyle(
-                            color: ColorUtil.rgba(121, 56, 253, 1),
-                            fontSize: 12.sp,
-                            fontWeight: FontWeightHelper.regular,
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.end,
+                        children: [
+                          Container(
+                            alignment: Alignment.center,
+                            height: 20,
+                            child: Text(
+                              "全部转出",
+                              style: TextStyle(
+                                color: ColorUtil.rgba(121, 56, 253, 1),
+                                fontSize: 12.sp,
+                                fontWeight: FontWeightHelper.regular,
+                              ),
+                            ),
                           ),
-                        ),
+                          GestureDetector(
+                            behavior: HitTestBehavior.opaque,
+                            onTap: (){
+                              showTransDetailAlertView(context: context);
+                            },
+                            child: Container(
+                              alignment: Alignment.centerRight,
+                              margin: EdgeInsets.only(right: 12.w, left: 6.w),
+                              height: 11,
+                              width: 11,
+                              decoration: BoxDecoration(
+                                  color: ColorUtil.rgba(192, 192, 192, 1),
+                                  borderRadius: BorderRadius.circular(20)),
+                            ),
+                          ),
+                        ],
                       ),
                       onTap: () {
                         _valueEC.text = tokens.balance.toString();

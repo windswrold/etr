@@ -1,19 +1,26 @@
 import '../public.dart';
 
 class TRButton extends StatelessWidget {
-  const TRButton(
-      {Key? key,
-      this.onTap,
-      this.bgc,
-      this.text,
-      this.textStyle,
-      this.borderRadius,
-      this.height,
-      this.padding,
-      this.border,
-      this.width,
-      this.gradient})
-      : super(key: key);
+  const TRButton({
+    Key? key,
+    this.onTap,
+    this.bgc,
+    this.text,
+    this.textStyle,
+    this.borderRadius,
+    this.height,
+    this.padding,
+    this.border,
+    this.width,
+    this.gradient = const LinearGradient(
+        begin: Alignment.topCenter,
+        end: Alignment.bottomCenter,
+        colors: [
+          Color(0XFFFF80E3),
+          Color(0XFF9855F8),
+        ]),
+    this.margin,
+  }) : super(key: key);
   final VoidCallback? onTap;
   final Color? bgc;
   final String? text;
@@ -22,6 +29,8 @@ class TRButton extends StatelessWidget {
   final double? height;
   final double? width;
   final EdgeInsetsGeometry? padding;
+  final EdgeInsetsGeometry? margin;
+
   final BoxBorder? border;
   final Gradient? gradient;
 
@@ -34,6 +43,7 @@ class TRButton extends StatelessWidget {
         color: borderRadius == null ? bgc : null,
         height: height,
         padding: padding,
+        margin: margin,
         width: width,
         alignment: Alignment.center,
         decoration: borderRadius == null

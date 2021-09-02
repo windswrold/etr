@@ -232,62 +232,25 @@ class ImportWalletState extends State<ImportWallet> {
                     labelText: "请填写您的私钥",
                   ),
 
-            // Positioned(
-            //   left: 41.w,
-            //   top: 345.h,
-            //   child: Container(
-            //     width: 14,
-            //     height: 14,
-            //     child: showWordWarn
-            //         ? Image.asset(path + "/little-warn-icon.png")
-            //         : null,
-            //   ),
-            // ),
-            // Positioned(
-            //   left: 41.w,
-            //   top: 345.h,
-            //   child: Container(
-            //     width: 14,
-            //     height: 14,
-            //     child: showSecretWarn
-            //         ? Image.asset(path + "/little-warn-icon.png")
-            //         : null,
-            //   ),
-            // ),
-
             Positioned(
-                bottom: 43.h,
-                left: 40.w,
-                right: 40.w,
-                child: Listener(
-                    child: Container(
-                      width: double.infinity,
-                      height: 43,
-                      padding: EdgeInsets.only(top: 8),
-                      decoration: BoxDecoration(
-                          color: canNext
-                              ? Color(0xff9C6CFF)
-                              : Color(0xff9C6CFF).withOpacity(0.19),
-                          borderRadius: BorderRadius.circular(22),
-                          boxShadow: [
-                            BoxShadow(
-                                offset: Offset(0, 6),
-                                blurRadius: 13,
-                                color: Color.fromRGBO(156, 108, 255, 0.19)),
-                          ]),
-                      child: Text(
-                        "确定",
-                        textAlign: TextAlign.center,
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontFamily: "PingFangSC",
-                          fontSize: 16,
-                        ),
-                      ),
-                    ),
-                    onPointerDown: (event) => {
-                          next(),
-                        }))
+              bottom: 43.h,
+              left: 40.w,
+              right: 40.w,
+              child: TRButton(
+                onTap: next,
+                bgc: canNext
+                    ? Color(0xff9C6CFF)
+                    : Color(0xff9C6CFF).withOpacity(0.19),
+                text: "确定",
+                height: 43.w,
+                borderRadius: 22,
+                textStyle: TextStyle(
+                  color: Colors.white,
+                  fontWeight: FontWeightHelper.semiBold,
+                  fontSize: 16.sp,
+                ),
+              ),
+            ),
           ],
         ),
       ),

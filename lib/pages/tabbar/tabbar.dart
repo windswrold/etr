@@ -33,12 +33,12 @@ class HomeTabbarState extends State<HomeTabbar> {
             activeIcon: LoadAssetsImage("tabbar/icon_wallet_selected.png",
                 width: 24, height: 24),
             label: "钱包"),
-        // BottomNavigationBarItem(
-        //     icon: LoadAssetsImage("tabbar/icon_home_normal.png",
-        //         width: 24, height: 24),
-        //     activeIcon: LoadAssetsImage("tabbar/icon_home_selected.png",
-        //         width: 24, height: 24),
-        //     label: "浏览"),
+        BottomNavigationBarItem(
+            icon: LoadAssetsImage("tabbar/icon_home_normal.png",
+                width: 24, height: 24),
+            activeIcon: LoadAssetsImage("tabbar/icon_home_selected.png",
+                width: 24, height: 24),
+            label: "浏览"),
         BottomNavigationBarItem(
             icon: LoadAssetsImage("tabbar/icon_mine_normal.png",
                 width: 24, height: 24),
@@ -47,7 +47,7 @@ class HomeTabbarState extends State<HomeTabbar> {
             label: "设置"),
       ];
 
-  List<Widget> bodyList = [WalletIndex(), SettingPage()];
+  List<Widget> bodyList = [WalletIndex(), Dynamic(),SettingPage()];
 
   void onTap(int index) {
     setState(() {

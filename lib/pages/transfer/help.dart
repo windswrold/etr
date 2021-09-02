@@ -122,6 +122,7 @@ class HelpPage extends StatelessWidget {
                 width: 107.w,
                 height: 42.w,
                 borderRadius: 20,
+                gradient: null,
                 onTap: () {
                   Routers.goBack(context);
                 },

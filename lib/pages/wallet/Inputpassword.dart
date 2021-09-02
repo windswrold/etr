@@ -1,5 +1,6 @@
 import 'package:etrflying/component/custom_textfield.dart';
 import 'package:etrflying/model/tr_wallet.dart';
+import 'package:etrflying/pages/identity/build_identity.dart';
 import 'package:etrflying/pages/index/index.dart';
 import 'package:etrflying/pages/transfer/help.dart';
 
@@ -48,7 +49,7 @@ class _InputPasswordState extends State<InputPassword> {
           if (widget.inputType == InputPasswordType.DelWallet) {
             Provider.of<CurrentChooseWalletState>(context, listen: false)
                 .delWallets();
-            Routers.push(context, Index());
+            Routers.push(context, BuildIdentity());
           } else {
             final memo = wallet.exportMemo(pin: value!)!;
             Routers.push(context, BackWords(words: memo));

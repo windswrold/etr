@@ -170,13 +170,78 @@ showBackWarningAlertView({
                         color: Colors.white,
                         fontSize: 14.sp,
                         fontWeight: FontWeightHelper.medium),
-                    gradient: LinearGradient(
-                        begin: Alignment.centerLeft,
-                        end: Alignment.centerRight,
-                        colors: [
-                          Color(0xff9c6cff),
-                          Color(0xffcba5ff),
-                        ]),
+                  ),
+                ],
+              ),
+            ),
+          ),
+        );
+      });
+}
+
+showTransDetailAlertView({
+  required BuildContext context,
+}) {
+  showDialog(
+      context: context,
+      builder: (context) {
+        return Scaffold(
+          backgroundColor: Colors.transparent,
+          body: Center(
+            child: Container(
+              width: 325.w,
+              height: 364.w,
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.circular(20),
+              ),
+              padding: EdgeInsets.only(left: 35.w, right: 35.w),
+              child: Column(
+                children: [
+                  Container(
+                    alignment: Alignment.center,
+                    margin: EdgeInsets.only(top: 40.w),
+                    child: LoadAssetsImage(
+                      "fill_info//trans_all.png",
+                      width: 75.w,
+                      height: 72.w,
+                    ),
+                  ),
+                  Container(
+                    margin: EdgeInsets.only(top: 20.w),
+                    alignment: Alignment.center,
+                    child: Text(
+                      "转账说明",
+                      style: TextStyle(
+                          color: ColorUtil.rgba(22, 26, 39, 1),
+                          fontSize: 17.sp,
+                          fontWeight: FontWeightHelper.bold),
+                    ),
+                  ),
+                  Container(
+                    margin: EdgeInsets.only(top: 18.w),
+                    alignment: Alignment.center,
+                    child: Text(
+                      "由于链上转账需要一定的矿工费，因此全部转出后收到的数额是扣除矿工费之后的数额，实际到账会比当前数额少一些。",
+                      style: TextStyle(
+                          color: ColorUtil.rgba(102, 102, 102, 1),
+                          fontSize: 14.sp,
+                          fontWeight: FontWeightHelper.bold),
+                    ),
+                  ),
+                  TRButton(
+                    text: "确认",
+                    borderRadius: 20,
+                    margin: EdgeInsets.only(top: 43.w),
+                    onTap: () {
+                      Navigator.pop(context);
+                    },
+                    width: 152.w,
+                    height: 43.w,
+                    textStyle: TextStyle(
+                        color: Colors.white,
+                        fontSize: 14.sp,
+                        fontWeight: FontWeightHelper.medium),
                   ),
                 ],
               ),

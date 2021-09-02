@@ -238,28 +238,22 @@ class _PaymentSheetState extends State<PaymentSheet> {
                     },
                   ),
                 ),
-                GestureDetector(
-                    onTap: _next,
-                    child: Container(
-                      height: 40.w,
-                      margin: EdgeInsets.only(
-                        bottom: 58.w,
-                        left: 40.w,
-                        right: 40.w,
-                      ),
-                      alignment: Alignment.center,
-                      decoration: BoxDecoration(
-                        color: ColorUtil.rgba(156, 108, 255, 1),
-                        borderRadius: BorderRadius.circular(22),
-                      ),
-                      child: Text(
-                        "发送",
-                        style: TextStyle(
-                            fontWeight: FontWeightHelper.semiBold,
-                            fontSize: 16.sp,
-                            color: Colors.white),
-                      ),
-                    )),
+                TRButton(
+                  onTap: _next,
+                  text: "发送",
+                  bgc: ColorUtil.rgba(156, 108, 255, 1),
+                  height: 40.w,
+                  borderRadius: 22,
+                  margin: EdgeInsets.only(
+                    bottom: 58.w,
+                    left: 40.w,
+                    right: 40.w,
+                  ),
+                  textStyle: TextStyle(
+                      fontWeight: FontWeightHelper.semiBold,
+                      fontSize: 16.sp,
+                      color: Colors.white),
+                ),
               ],
             )
           : Column(
@@ -320,27 +314,21 @@ class _PaymentSheetState extends State<PaymentSheet> {
                     contentPadding: EdgeInsets.fromLTRB(14, 12, 14, 12),
                   ),
                 ),
-                GestureDetector(
-                    onTap: _complation,
-                    child: Container(
-                      height: 40.w,
-                      margin: EdgeInsets.only(
-                          top: 31.w, left: 40.w, right: 40.w, bottom: 12.w),
-                      alignment: Alignment.center,
-                      decoration: BoxDecoration(
-                        color: canNext
-                            ? Color(0xff9C6CFF)
-                            : Color(0xff9C6CFF).withOpacity(0.19),
-                        borderRadius: BorderRadius.circular(22),
-                      ),
-                      child: Text(
-                        "发送",
-                        style: TextStyle(
-                            fontWeight: FontWeightHelper.semiBold,
-                            fontSize: 16.sp,
-                            color: Colors.white),
-                      ),
-                    )),
+                TRButton(
+                  onTap: _complation,
+                  text: "发送",
+                  bgc: canNext
+                      ? Color(0xff9C6CFF)
+                      : Color(0xff9C6CFF).withOpacity(0.19),
+                  height: 40.w,
+                  borderRadius: 22,
+                  margin: EdgeInsets.only(
+                      top: 31.w, left: 40.w, right: 40.w, bottom: 12.w),
+                  textStyle: TextStyle(
+                      fontWeight: FontWeightHelper.semiBold,
+                      fontSize: 16.sp,
+                      color: Colors.white),
+                ),
                 GestureDetector(
                   behavior: HitTestBehavior.opaque,
                   onTap: () {

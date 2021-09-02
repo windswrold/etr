@@ -1,6 +1,7 @@
 import 'package:bot_toast/bot_toast.dart';
 import 'package:etrflying/model/node_model.dart';
 import 'package:etrflying/model/tr_wallet.dart';
+import 'package:etrflying/pages/identity/build_identity.dart';
 import 'package:etrflying/pages/index/index.dart';
 import 'package:etrflying/pages/tabbar/tabbar.dart';
 import 'package:etrflying/state/wallet_state.dart';
@@ -92,7 +93,7 @@ class _AppState extends State<App> {
                           ? buildEmptyView()
                           : state == 2
                               ? HomeTabbar()
-                              : Index(),
+                              : BuildIdentity(),
                     },
                   ),
                 )));

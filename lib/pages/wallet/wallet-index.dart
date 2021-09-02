@@ -136,7 +136,7 @@ class _WalletIndexState extends State<WalletIndex> {
               borderRadius: BorderRadius.circular(10),
             ),
             child: WalletCoinOption(
-                imgSrc: path + "/icon_${token.coinType}.png",
+                imgSrc: path + "/icon_${token.token}.png",
                 text: token.token,
                 amount: token.balanceString,
                 top: 0)));

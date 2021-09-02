@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
@@ -16,17 +16,50 @@
                         <viewControllerLayoutGuide type="bottom" id="xbc-2k-c8Z"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" image="启动页" translatesAutoresizingMaskIntoConstraints="NO" id="YRO-k0-Ey4">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" image="launch" translatesAutoresizingMaskIntoConstraints="NO" id="YRO-k0-Ey4">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="intro_bg" translatesAutoresizingMaskIntoConstraints="NO" id="iG7-1U-7vF">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="424.5"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_bg" translatesAutoresizingMaskIntoConstraints="NO" id="S6c-jG-09O">
+                                <rect key="frame" x="133" y="133" width="109" height="109"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="109" id="9Cd-QU-ry6"/>
+                                    <constraint firstAttribute="height" constant="109" id="grF-EG-T5n"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="链接未来，遇见美好" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w33-Ir-Jvg">
+                                <rect key="frame" x="104.5" y="274" width="166" height="22"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="button" translatesAutoresizingMaskIntoConstraints="NO" id="B78-To-8Gb">
+                                <rect key="frame" x="106" y="579" width="163" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="SKu-ae-sc5"/>
+                                    <constraint firstAttribute="width" constant="163" id="rHc-qX-hW5"/>
+                                </constraints>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="w33-Ir-Jvg" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="Fzm-Tb-A09"/>
+                            <constraint firstItem="S6c-jG-09O" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="GPc-xM-UxP"/>
                             <constraint firstItem="YRO-k0-Ey4" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="Gcp-u4-dYI"/>
+                            <constraint firstAttribute="trailing" secondItem="iG7-1U-7vF" secondAttribute="trailing" id="Qfn-3B-gL7"/>
+                            <constraint firstItem="S6c-jG-09O" firstAttribute="top" secondItem="iG7-1U-7vF" secondAttribute="top" constant="133" id="Wxz-b2-wrl"/>
                             <constraint firstAttribute="bottom" secondItem="YRO-k0-Ey4" secondAttribute="bottom" id="ZLA-3v-Ycb"/>
+                            <constraint firstItem="iG7-1U-7vF" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="gco-he-7GH"/>
+                            <constraint firstItem="w33-Ir-Jvg" firstAttribute="top" secondItem="S6c-jG-09O" secondAttribute="bottom" constant="32" id="h0G-8N-2Bi"/>
+                            <constraint firstItem="iG7-1U-7vF" firstAttribute="top" secondItem="Ydg-fD-yQy" secondAttribute="bottom" id="kBC-Nu-D8J"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="B78-To-8Gb" secondAttribute="bottom" constant="53" id="p6E-bB-hS7"/>
+                            <constraint firstItem="B78-To-8Gb" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="qEC-8Q-1iH"/>
                             <constraint firstAttribute="trailing" secondItem="YRO-k0-Ey4" secondAttribute="trailing" id="uXE-Gg-dB9"/>
                             <constraint firstItem="YRO-k0-Ey4" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="yhB-AJ-NUE"/>
                         </constraints>
@@ -38,6 +71,9 @@
         </scene>
     </scenes>
     <resources>
-        <image name="启动页" width="375" height="811.5"/>
+        <image name="button" width="159" height="35"/>
+        <image name="icon_bg" width="109" height="108.5"/>
+        <image name="intro_bg" width="375" height="424.5"/>
+        <image name="launch" width="375" height="812"/>
     </resources>
 </document>

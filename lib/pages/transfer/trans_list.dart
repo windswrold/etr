@@ -99,6 +99,9 @@ class _TransListPageState extends State<TransListPage> {
     setState(() {
       _datas = datas;
     });
+    if (timer?.isActive() == false) {
+      timer?.startTimer();
+    }
   }
 
   void _changeListType(MTransListType type) {
@@ -184,6 +187,7 @@ class _TransListPageState extends State<TransListPage> {
               },
               borderRadius: 6,
               bgc: ColorUtil.rgba(156, 108, 255, 0.1),
+              gradient: null,
               textStyle: TextStyle(
                 color: ColorUtil.rgba(144, 90, 255, 1),
                 fontWeight: FontWeightHelper.medium,
@@ -200,6 +204,7 @@ class _TransListPageState extends State<TransListPage> {
                 Routers.push(context, ReceiveAddress());
               },
               borderRadius: 6,
+              gradient: null,
               bgc: ColorUtil.rgba(156, 108, 255, 0.1),
               textStyle: TextStyle(
                 color: ColorUtil.rgba(144, 90, 255, 1),

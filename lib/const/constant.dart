@@ -87,14 +87,14 @@ final bool isAndroid = Platform.isAndroid;
 final bool isIOS = Platform.isIOS;
 final String ASSETS_IMG = './assets/img/';
 
-final _isTestNode = true;
+final isTestNode = true;
 
-final ethNode = _isTestNode
+final ethNode = isTestNode
     ? NodeModel("https://rinkeby.infura.io/v3/fbd05acd5b5c4b2a857720141485416d",
         KCoinType.ETH.index, true, ETHChainID.Rinkeby.getChainId())
     : NodeModel("https://mainnet.infura.io/v3/fbd05acd5b5c4b2a857720141485416d",
         KCoinType.ETH.index, false, ETHChainID.Mainnet.getChainId());
-final bscNode = _isTestNode
+final bscNode = isTestNode
     ? NodeModel("https://data-seed-prebsc-1-s1.binance.org:8545",
         KCoinType.BSC.index, true, BSCChainID.Testnet.getChainId())
     : NodeModel("https://bsc-dataseed.binance.org", KCoinType.BSC.index, false,
